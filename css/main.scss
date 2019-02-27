@@ -97,13 +97,20 @@ body{
 			border-radius:0 5px 5px 0;
 			overflow:hidden;
 			.dish-suggestion{
-				color:orange;
+				color:#cca112;
 				font-weight:bold;
 			}
 			*{
 				width:100%;
 			}
 		}	
+	}
+	.chef-greetings{
+		p{
+			font-family:times;
+			font-size:18px;
+			margin-top:30px;
+		}
 	}
 }
 
@@ -137,7 +144,7 @@ body{
 				padding-bottom:10px;
 				padding-left:20px;
 				&.active{
-					border-left:2px solid orange;
+					border-left:2px solid #cca112;
 					background:#111;
 				}
 				&:hover{
@@ -238,6 +245,82 @@ body{
 		}
 		.btn-success{
 			margin-right:20px;
+		}
+		.client-form{
+			width:calc(100% - 20px);
+			display:flex;
+			.custom-dd-wrapper{
+				position:relative;
+				border-radius:5px;
+				background:white;
+				padding:10px;
+				height:fit-content;
+				flex-shrink: 0;
+				flex-grow:1;
+				&:first-of-type{
+					border-radius:5px 0 0 5px;
+					border-right:1px solid #ccc;
+				}
+				&:last-of-type{
+					border-radius:0 5px 5px 0;
+				}
+				.select-title{
+					font-size:10px;
+					width:100%;
+					display:block;
+				}
+				.selected-option{
+					font-size:12px;
+					color:#aaa;
+					display:block;
+				}
+				.chevron{
+				    height: 0;
+				    border-left: 5px solid transparent;
+				    border-right: 5px solid transparent;
+				    border-top: 5px solid #cca112;
+				    float: right;
+				    margin-top: -12px;
+				    transition:all .5s;
+				}
+				.custom-options{
+				    list-style: none;
+					padding: 0px;
+					font-size: 12px;
+					cursor: pointer;
+					margin: 0px;
+					position: absolute;
+					top: 55px;
+					left: 0;
+					width: 100%;
+					background: white;
+					border-radius: 5px;
+					box-shadow: 3px 3px 3px #ccc;
+					display: none;
+					li{
+						padding-top:5px;
+						padding-bottom:5px;
+						padding-left:10px;
+						overflow: hidden;
+						&:hover{
+							text-decoration:underline;
+							color:#cca112;
+							cursor:pointer;
+						}
+					}
+				}
+				&.open{
+					.chevron{
+					    height: 0;
+					    border-left: 5px solid transparent;
+					    border-right: 5px solid transparent;
+					    border-bottom: 5px solid #cca112;
+					    border-top:0px;
+					    float: right;
+					    margin-top: -12px;
+					}
+				}
+			}
 		}
 	}
 }

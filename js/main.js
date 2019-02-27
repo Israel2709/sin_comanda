@@ -48,3 +48,7 @@ const assignTable = ()=>{
 		$("#codeModal").modal("show")
 	}
 }
+
+const showOptions = (selectedDd)=>{
+	$(selectedDd).find(".custom-options").slideDown("fast")
+}

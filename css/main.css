@@ -88,11 +88,16 @@ body {
   overflow: hidden;
 }
 .welcome-card .dish-wrapper .dish-description .dish-suggestion {
-  color: orange;
+  color: #cca112;
   font-weight: bold;
 }
 .welcome-card .dish-wrapper .dish-description * {
   width: 100%;
+}
+.welcome-card .chef-greetings p {
+  font-family: times;
+  font-size: 18px;
+  margin-top: 30px;
 }
 
 .waiter-dashboard {
@@ -129,7 +134,7 @@ body {
   padding-left: 20px;
 }
 .waiter-dashboard .left-nav ul li.active {
-  border-left: 2px solid orange;
+  border-left: 2px solid #cca112;
   background: #111;
 }
 .waiter-dashboard .left-nav ul li:hover {
@@ -222,6 +227,80 @@ body {
 }
 .waiter-dashboard .right-dashboard .btn-success {
   margin-right: 20px;
+}
+.waiter-dashboard .right-dashboard .client-form {
+  width: calc(100% - 20px);
+  display: flex;
+}
+.waiter-dashboard .right-dashboard .client-form .custom-dd-wrapper {
+  position: relative;
+  border-radius: 5px;
+  background: white;
+  padding: 10px;
+  height: fit-content;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+.waiter-dashboard .right-dashboard .client-form .custom-dd-wrapper:first-of-type {
+  border-radius: 5px 0 0 5px;
+  border-right: 1px solid #ccc;
+}
+.waiter-dashboard .right-dashboard .client-form .custom-dd-wrapper:last-of-type {
+  border-radius: 0 5px 5px 0;
+}
+.waiter-dashboard .right-dashboard .client-form .custom-dd-wrapper .select-title {
+  font-size: 10px;
+  width: 100%;
+  display: block;
+}
+.waiter-dashboard .right-dashboard .client-form .custom-dd-wrapper .selected-option {
+  font-size: 12px;
+  color: #aaa;
+  display: block;
+}
+.waiter-dashboard .right-dashboard .client-form .custom-dd-wrapper .chevron {
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #cca112;
+  float: right;
+  margin-top: -12px;
+  transition: all 0.5s;
+}
+.waiter-dashboard .right-dashboard .client-form .custom-dd-wrapper .custom-options {
+  list-style: none;
+  padding: 0px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 0px;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #ccc;
+  display: none;
+}
+.waiter-dashboard .right-dashboard .client-form .custom-dd-wrapper .custom-options li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  overflow: hidden;
+}
+.waiter-dashboard .right-dashboard .client-form .custom-dd-wrapper .custom-options li:hover {
+  text-decoration: underline;
+  color: #cca112;
+  cursor: pointer;
+}
+.waiter-dashboard .right-dashboard .client-form .custom-dd-wrapper.open .chevron {
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #cca112;
+  border-top: 0px;
+  float: right;
+  margin-top: -12px;
 }
 
 #codeModal .modal-header {

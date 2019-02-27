@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Sincomanda</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+		<link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+		<div class="modal fade" id="codeModal" tabindex="-1" role="dialog" aria-labelledby="codeModalTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title gobold" id="codeModalTitle">
+						<span>El código del cliente es:    </span>
+						</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Brinda el código creado al Cliente para que pueda ingresar desde el dispositivo para realizar su orden:</p>
+						<div class="client-code gobold">ANAGR2</div>
+					</div>
+					<div class="modal-footer">
+						<div class="btn btn-success" data-dismiss="modal">Asignar</div>
+						<div class="btn btn-outline-danger" data-dismiss="modal">Cancelar</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 content-block login d-none">
+					<div class="main-logo-wrapper w-100 flex justify-content-center mt-4">
+						<img class="d-block mx-auto" src="img/main-logo-white.png" alt="">
+					</div>
+					<div class="main-cover d-flex w-100 justify-content-start mt-4">
+						<div class="login-wrapper d-inline-flex w-100  align-items-center">
+							<div class="login-left">
+								<img src="img/bread.png" alt="">
+							</div>
+							<div class="login-form d-flex flex-column justify-content-center">
+								<h1 class="text-underline">¡Bienvenido!</h1>
+								<form action="" class="user-login">
+									<div class="form-group username">
+										<label for="">Código:</label>
+										<input id="user-name" type="text" class="form-control" placeholder="Ingresa tu usuario">
+									</div>
+									<div class="btn btn-success mt-5" onclick="userLogin()">Ingresar</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 content-block welcome d-none">
+					<div class="welcome-card mt-5">
+						<div class="row">
+							<div class="col-sm-4 d-flex flex-column justify-content-around">
+								<div class="chef-greetings">
+									<h1 class="gobold mb-3">Bienvenida Ana</h1>
+									<p>"Somos mucho más de lo que comemos, pero podemos hacer que lo que comemos nos ayude a ser más de lo que somos."</p>
+								</div>
+								<div class="chef-sign d-flex flex-column w-50 ml-auto">
+									<img class="w-100" src="img/chef-sign.png" alt="">
+									<span>Chef Principal</span>
+								</div>
+							</div>
+							<div class="col-sm-8">
+								<img class="w-100" src="img/dish-1.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 content-block dashboard">
+					<div class="waiter-dashboard mt-5">
+						<div class="row">
+							<div class="col-sm-3 left-nav">
+								<img src="img/main-logo-white.png" alt="" class="nav-logo mt-4">
+								<ul class="nav-options">
+									<li class="active">Menú</li>
+									<li>CERRAR SESIÓN</li>
+								</ul>
+							</div>
+							<div class="col-sm-9 right-dashboard">
+								<div class="dashboard-header d-flex justify-content-between">
+									<p class="date">Martes 26 de febrero de 2019</p>
+									<div class="login-picture"><span class="user-name">Ana González</span><img src="img/profile-pic-2.jpg" alt="" class="user-pic"></div>
+								</div>
+								<div class="client-form d-flex w-50">
+									<div class="custom-dd-wrapper" onclick="showOptions(this)">
+										<div class="custom-dd control">
+											<span class="select-title">Tipo de Comida</span>
+											<span class="selected-option">Desayuno</span><span class="chevron"></span>
+										</div>
+										<ul class="custom-options">
+											<li onclick="selectOption(this)">Desayuno</li>
+											<li onclick="selectOption(this)">Comida</li>
+											<li onclick="selectOption(this)">Cena</li>
+										</ul>
+									</div>
+									<div class="custom-dd-wrapper" onclick="showOptions(this)">
+										<div class="custom-dd control">
+											<span class="select-title">Selecciona platillo/especialidad</span>
+											<span class="selected-option">Vegano</span><span class="chevron"></span>
+										</div>
+										<ul class="custom-options">
+											<li onclick="selectOption(this)">Vegano</li>
+											<li onclick="selectOption(this)">Omnívoro</li>
+										</ul>
+									</div>
+								</div>
+								<div class="table-assignment mt-3">
+									<h1><span>ASIGNACIÓN DE MESA</span></h1>
+									<div class="table-map mt-4">
+										<div class="table-icon" onclick="setTable(this)">1</div>
+										<div class="table-icon" onclick="setTable(this)">2</div>
+										<div class="table-icon" onclick="setTable(this)">3</div>
+										<div class="table-icon occupied" onclick="setTable(this)">4</div>
+										<div class="table-icon" onclick="setTable(this)">5</div>
+										<div class="table-icon" onclick="setTable(this)">6</div>
+										<div class="table-icon occupied" onclick="setTable(this)">7</div>
+										<div class="table-icon" onclick="setTable(this)">8</div>
+										<div class="table-icon occupied" onclick="setTable(this)">9</div>
+										<div class="table-icon" onclick="setTable(this)">10</div>
+										<div class="table-icon" onclick="setTable(this)">11</div>
+										<div class="table-icon occupied" onclick="setTable(this)">12</div>
+									</div>
+									<p class="gobold">Cuenta dividida:
+										<input  class="ml-3" type="radio" name="split-account">Sí
+									<input  class="ml-3" type="radio" name="split-account" checked>No</p>
+								</div>
+								<div class="btn btn-success float-right w-25 mb-3" onclick="assignTable()">ASIGNAR</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/mainCustomer.js"></script>
+	</body>
+</html>
