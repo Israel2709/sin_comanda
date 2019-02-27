@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Sincomanda</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+		<link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+		<div class="modal fade" id="codeModal" tabindex="-1" role="dialog" aria-labelledby="codeModalTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title gobold" id="codeModalTitle">
+		        	<span>El código del cliente es:    </span>
+		    	</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	<p>Brinda el código creado al Cliente para que pueda ingresar desde el dispositivo para realizar su orden:</p>
+		        <div class="client-code gobold">ANAGR2</div>
+		      </div>
+		      <div class="modal-footer">
+		        <div class="btn btn-success" data-dismiss="modal">Asignar</div>
+		         <div class="btn btn-outline-danger" data-dismiss="modal">Cancelar</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 content-block login">
+					<div class="main-logo-wrapper w-100 flex justify-content-center mt-4">
+						<img class="d-block mx-auto" src="img/main-logo-white.png" alt="">
+					</div>
+					<div class="main-cover d-flex w-100 justify-content-start mt-4">
+						<div class="login-wrapper d-inline-flex w-100  align-items-center">
+							<div class="login-left">
+								<img src="img/bread.png" alt="">
+							</div>
+							<div class="login-form d-flex flex-column justify-content-center">
+								<h1 class="text-underline">¡Bienvenido!</h1>
+								<form action="" class="user-login">
+									<div class="form-group username">
+										<label for="">Usuario:</label>
+										<input id="user-name" type="text" class="form-control" placeholder="Ingresa tu usuario">
+									</div>
+									<div class="form-group password">
+										<label for="">Contraseña:</label>
+										<input id="user-password" type="text" class="form-control" placeholder="Ingresa tu contraseña">
+									</div>
+									<div class="btn btn-success" onclick="userLogin()">Ingresar</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 content-block welcome d-none">
+					<div class="welcome-card mt-5">
+						<h1 class="mt-3">Bienvenida <span class="user-name">María</span></h1>
+						<h2>¡Que tengas un lindo y productivo día!</h2>
+						<h3>No olvides recomendarle el siguiente platillo a tus comensales:</h3>
+						<div class="dish-wrapper d-inline-flex">
+							<div class="dish-picture">
+								<img src="img/pasta.png" alt="">
+							</div>
+							<div class="dish-description d-flex flex-column justify-content-center">
+								<p class="dish-suggestion">LA SUGERENCIA DEL DÍA</p>
+								<h4 class="dish-name">SPAGUETTI A LA MANTEQUILLA CON POLLO</h4>
+								<p class="dish-content">Con un toque picante que sacude las papilas y da sabor a cualquier platillo que acompañe.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<div class="col-sm-12 content-block dashboard d-none">
+					<div class="waiter-dashboard mt-5">
+						<div class="row">
+							<div class="col-sm-3 left-nav">
+								<img src="img/main-logo-white.png" alt="" class="nav-logo mt-4">
+								<ul class="nav-options">
+									<li class="active">REGISTRO DE CLIENTE</li>
+									<li>ASIGNACIÓN DE MESA</li>
+									<li>BÚSQUEDA DE COMENSAL</li>
+									<li>CERRAR SESIÓN</li>
+								</ul>
+							</div>
+							<div class="col-sm-9 right-dashboard">
+								<div class="dashboard-header d-flex justify-content-between">
+									<p class="date">Martes 26 de febrero de 2019</p>
+									<div class="login-picture"><span class="user-name">María Martínez</span><img src="img/profilepic.jpg" alt="" class="user-pic"></div>
+								</div>
+								<div class="dashboard-form">
+									<h1><span>REGISTRAR CLIENTE</span></h1>
+									<form action="" class="inline-form mt-4">
+										<div class="row">
+											<div class="form-group col-sm-6">
+												<label for="" class="w-100"><b>Nombre:</b></label>
+												<input id="client-name" class="form-control" type="text" placeholder="Nombre del cliente">
+											</div>
+											<div class="form-group col-sm-6">
+												<label for="" class="w-100"><b>Comensales:</b></label>
+												<input id="client-qty" class="form-control" type="number" placeholder="Número de comensales">
+											</div>
+										</div>
+										
+									</form>
+								</div>
+								<div class="table-assignment mt-3">
+									<h1><span>ASIGNACIÓN DE MESA</span></h1>
+									<div class="table-map mt-4">
+										<div class="table-icon" onclick="setTable(this)">1</div>
+										<div class="table-icon" onclick="setTable(this)">2</div>
+										<div class="table-icon" onclick="setTable(this)">3</div>
+										<div class="table-icon occupied" onclick="setTable(this)">4</div>
+										<div class="table-icon" onclick="setTable(this)">5</div>
+										<div class="table-icon" onclick="setTable(this)">6</div>
+										<div class="table-icon occupied" onclick="setTable(this)">7</div>
+										<div class="table-icon" onclick="setTable(this)">8</div>
+										<div class="table-icon occupied" onclick="setTable(this)">9</div>
+										<div class="table-icon" onclick="setTable(this)">10</div>
+										<div class="table-icon" onclick="setTable(this)">11</div>
+										<div class="table-icon occupied" onclick="setTable(this)">12</div>
+									</div>
+									<p class="gobold">Cuenta dividida:
+										<input  class="ml-3" type="radio" name="split-account">Sí
+										<input  class="ml-3" type="radio" name="split-account" checked>No</p>
+								</div>
+								<div class="btn btn-success float-right w-25 mb-3" onclick="assignTable()">ASIGNAR</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
